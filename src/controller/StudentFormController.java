@@ -74,10 +74,24 @@ public class StudentFormController {
             new Alert(Alert.AlertType.WARNING, "Try Again..").show();
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        if (new StudentController().deleteStudent(txtName.getText())){
+            new Alert(Alert.AlertType.CONFIRMATION, "Deleted").show();
+        }else{
+            new Alert(Alert.AlertType.WARNING, "Try Again").show();
+        }
     }
 
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        Student student= new Student(
+                txtId.getText(),txtName.getText(),txtMail.getText(),txtContact.getText(),txtAddress.getText(),txtNic.getText()
+
+        );
+        if (new StudentController().updateStudent(student)) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Updated..").show();
+        }
+        else
+            new Alert(Alert.AlertType.WARNING,"Try Again").show();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
