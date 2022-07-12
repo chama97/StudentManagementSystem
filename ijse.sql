@@ -37,4 +37,19 @@ INSERT INTO Teacher VALUES ('T-001','Ranajith','567456234V','0761234567','Horana
 
 SELECT * FROM Teacher;
 
+CREATE TABLE Subject(
+                        subject_id VARCHAR(45) NOT NULL,
+                        subject_name VARCHAR(45) NOT NULL,
+                        credit DOUBLE ,
+                        teacher_id VARCHAR(45),
+                        CONSTRAINT PRIMARY KEY (subject_id),
+                        CONSTRAINT FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES;
+DESC Subject;
+
+INSERT INTO Subject VALUES ('S-001','JDBC','100000','T-001');
+SELECT * FROM Subject;
+
+
 
