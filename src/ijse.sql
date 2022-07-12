@@ -1,40 +1,40 @@
-DROP DATABASE IF EXISTS Kade;
-CREATE DATABASE IF NOT EXISTS Kade;
-USE Kade;
+DROP DATABASE IF EXISTS ijse;
+CREATE DATABASE IF NOT EXISTS ijse;
+USE ijse;
 
-CREATE TABLE Customer(
-                         student_id VARCHAR(15) NOT NULL,
-                         name VARCHAR(20) NOT NULL,
-                         email VARCHAR(20) NOT NULL,
-                         contact
+CREATE TABLE Student(
+                         student_id VARCHAR(45) NOT NULL,
+                         student_name VARCHAR(45) NOT NULL,
+                         email TEXT,
+                         contact VARCHAR(20) NOT NULL,
                          address TEXT,
-
-                         CONSTRAINT PRIMARY KEY (id)
+                         nic VARCHAR(45) NOT NULL,
+                         CONSTRAINT PRIMARY KEY (student_id)
 );
 SHOW TABLES;
-DESC Customer;
+DESC Student;
 
-INSERT INTO Item VALUES ('I-001','Computer','100','100000'),
-                        ('I-002','Laptop','100','150000'),
-                        ('I-003','Tab','200','130000');
+INSERT INTO Student VALUES ('S-001','Saman','saman@gmail','0771234567','Horana','123456234V'),
+                        ('S-002','Kamal','kamal@gmail','0782345678','Panadura','234456234V'),
+                        ('S-003','Amal','amal@gmail','0751234567','Colombo','567456234V');
 
-SELECT * FROM Item;
+SELECT * FROM Student;
 
-CREATE TABLE Item(
-        id VARCHAR(15) NOT NULL,
-        type VARCHAR(20) NOT NULL,
-        qty INT,
-        unitPrice DOUBLE NOT NULL,
-        CONSTRAINT PRIMARY KEY (id)
+CREATE TABLE Teacher(
+                        teacher_id VARCHAR(45) NOT NULL,
+                        name VARCHAR(45) NOT NULL,
+                        nic VARCHAR(45) NOT NULL,
+                        contact VARCHAR(45) NOT NULL,
+                        address TEXT,
+                        CONSTRAINT PRIMARY KEY (teacher_id)
 );
 SHOW TABLES;
-DESC Item;
+DESC Teacher;
 
-INSERT INTO Item VALUES ('I-001','Computer','100','100000'),
-                        ('I-002','Laptop','100','150000'),
-                        ('I-003','Tab','200','130000');
+INSERT INTO Teacher VALUES ('T-001','Ranajith','567456234V','0761234567','Horana'),
+                           ('T-002','Chamara','734456234V','0772345678','Galle'),
+                           ('T-003','Nandasena','867456234V','0781234567','Colombo');
 
-SELECT * FROM Item;
-
+SELECT * FROM Teacher;
 
 
