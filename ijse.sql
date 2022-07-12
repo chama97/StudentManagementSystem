@@ -68,4 +68,20 @@ INSERT INTO Course VALUES ('C-001','ComputerScience','100000','4years','S-001');
 SELECT * FROM Course;
 
 
+CREATE TABLE Intake(
+                       intake_id VARCHAR(45) NOT NULL,
+                       start_date DATE,
+                       intakecol VARCHAR(45),
+                       description VARCHAR(45),
+                       course_id VARCHAR(45),
+                       CONSTRAINT PRIMARY KEY (intake_id),
+                       CONSTRAINT FOREIGN KEY (course_id) REFERENCES Course(course_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES;
+DESC Intake;
+
+INSERT INTO Intake VALUES ('I-001','2022-7-12','abcd','started','C-001');
+SELECT * FROM Intake;
+
+
 
