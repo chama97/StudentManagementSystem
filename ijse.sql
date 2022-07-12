@@ -48,7 +48,8 @@ CREATE TABLE Subject(
 SHOW TABLES;
 DESC Subject;
 
-INSERT INTO Subject VALUES ('S-001','JDBC','100000','T-001');
+INSERT INTO Subject VALUES ('S-001','JDBC','100000','T-001'),
+                           ('S-002','OOP','200000','T-002');
 SELECT * FROM Subject;
 
 
@@ -64,7 +65,8 @@ CREATE TABLE Course(
 SHOW TABLES;
 DESC Course;
 
-INSERT INTO Course VALUES ('C-001','ComputerScience','100000','4years','S-001');
+INSERT INTO Course VALUES ('C-001','ComputerScience','100000','4years','S-001'),
+                          ('C-002','SF','200000','4years','S-002');
 SELECT * FROM Course;
 
 
@@ -80,7 +82,8 @@ CREATE TABLE Intake(
 SHOW TABLES;
 DESC Intake;
 
-INSERT INTO Intake VALUES ('I-001','2022-7-12','abcd','started','C-001');
+INSERT INTO Intake VALUES ('I-001','2022-7-12','abcd','started','C-001'),
+                          ('I-002','2022-7-13','abcd','started','C-002');
 SELECT * FROM Intake;
 
 
@@ -96,7 +99,8 @@ CREATE TABLE Registration(
 SHOW TABLES;
 DESC Registration;
 
-INSERT INTO Registration VALUES ('R-001','2022-7-12','S-001','I-001');
+INSERT INTO Registration VALUES ('R-001','2022-7-12','S-001','I-001'),
+                                ('R-002','2022-7-16','S-001','I-002');
 SELECT * FROM Registration;
 
 
@@ -111,7 +115,8 @@ CREATE TABLE Payment(
 SHOW TABLES;
 DESC Payment;
 
-INSERT INTO Payment VALUES ('P-001','2022-7-12','10000.0','R-001');
+INSERT INTO Payment VALUES ('P-001','2022-7-12','10000.0','R-001'),
+                           ('P-002','2022-7-20','20000.0','R-002');
 SELECT * FROM Payment;
 
 
