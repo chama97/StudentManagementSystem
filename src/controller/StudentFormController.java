@@ -96,7 +96,7 @@ public class StudentFormController {
 
         );
         if (new StudentController().updateStudent(student)) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Updated..").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Updated Student..").show();
             refreshStudent();
         }
         else
