@@ -52,4 +52,20 @@ INSERT INTO Subject VALUES ('S-001','JDBC','100000','T-001');
 SELECT * FROM Subject;
 
 
+CREATE TABLE Course(
+                        course_id VARCHAR(45) NOT NULL,
+                        course_name VARCHAR(45) NOT NULL,
+                        cost DOUBLE ,
+                        duration VARCHAR(45),
+                        subject_id VARCHAR(45),
+                        CONSTRAINT PRIMARY KEY (course_id),
+                        CONSTRAINT FOREIGN KEY (subject_id) REFERENCES Subject(subject_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES;
+DESC Course;
+
+INSERT INTO Course VALUES ('C-001','ComputerScience','100000','4years','S-001');
+SELECT * FROM Course;
+
+
 
