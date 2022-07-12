@@ -10,5 +10,5 @@ public interface StudentService {
     ArrayList<Student> getAllStudents() throws SQLException, ClassNotFoundException;
     Student getStudent(String id) throws SQLException, ClassNotFoundException;
     boolean deleteStudent(String id) throws SQLException, ClassNotFoundException;
-    boolean updateStudent(Student c) throws SQLException, ClassNotFoundException;
+    boolean updateStudent(Student s) throws SQLException, ClassNotFoundException;
 }
