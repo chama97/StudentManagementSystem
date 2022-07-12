@@ -84,4 +84,35 @@ INSERT INTO Intake VALUES ('I-001','2022-7-12','abcd','started','C-001');
 SELECT * FROM Intake;
 
 
+CREATE TABLE Registration(
+                       registration_id VARCHAR(45) NOT NULL,
+                       reg_date DATE,
+                       student_id VARCHAR(45),
+                       intake_id VARCHAR(45),
+                       CONSTRAINT PRIMARY KEY (registration_id , intake_id),
+                       CONSTRAINT FOREIGN KEY (student_id) REFERENCES Student(student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+                       CONSTRAINT FOREIGN KEY (intake_id) REFERENCES Intake(intake_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES;
+DESC Registration;
+
+INSERT INTO Registration VALUES ('R-001','2022-7-12','S-001','I-001');
+SELECT * FROM Registration;
+
+
+CREATE TABLE Payment(
+                       payment_id VARCHAR(45) NOT NULL,
+                       date DATE,
+                       cost DOUBLE ,
+                       registration_id VARCHAR(45),
+                       CONSTRAINT PRIMARY KEY (payment_id),
+                       CONSTRAINT FOREIGN KEY (registration_id) REFERENCES Registration(registration_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES;
+DESC Payment;
+
+INSERT INTO Payment VALUES ('P-001','2022-7-12','10000.0','R-001');
+SELECT * FROM Payment;
+
+
 
