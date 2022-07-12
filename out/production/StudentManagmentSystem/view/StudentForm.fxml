@@ -58,5 +58,10 @@
             <TableColumn fx:id="colNic" prefWidth="176.0" text="NIC" />
         </columns>
       </TableView>
+      <JFXButton layoutX="1129.0" layoutY="55.0" onAction="#btnRefreshOnAction" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: #0056b8;" text="Refresh" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

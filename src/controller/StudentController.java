@@ -76,11 +76,10 @@ public class StudentController implements StudentService{
         PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("UPDATE Student SET student_name=?, email=?, contact=?, address=?, nic=?  WHERE student_id=?");
         stm.setObject(1,s.getStudent_name());
         stm.setObject(2,s.getEmail());
-        stm.setObject(3,s.getEmail());
-        stm.setObject(4,s.getContact());
-        stm.setObject(5,s.getAddress());
-        stm.setObject(6,s.getNic());
-        stm.setObject(1,s.getStudent_Id());
+        stm.setObject(3,s.getContact());
+        stm.setObject(4,s.getAddress());
+        stm.setObject(5,s.getNic());
+        stm.setObject(6,s.getStudent_Id());
         return stm.executeUpdate()>0;
     }
 }
